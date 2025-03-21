@@ -51,7 +51,7 @@ class complex{
 
 		complex& operator*=(const complex& other){
 			I a = this->re;
-			I b = this->im;
+			I b = this->im; 
 			I c = other.re;
 			I d = other.im;
 			//i use the fact that the canonical product between complex numbers is given by the following rule:
