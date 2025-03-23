@@ -11,12 +11,11 @@ int main(){
 	    std::cout << "c2-> "<<c2 <<std::endl;
 	    std::cout << "c3-> "<<c3 <<std::endl;
 	    std::cout << "c4-> "<<c4 <<std::endl;
-	    
 	    std::cout << "c1+c2-> " << c1+c2<<std::endl;
-		std::cout << c1.conjugate() << std::endl;
-		std::cout << c3 << std::endl;
-		std::cout << "c1*c2-> " << c1*c2 << std::endl;
-		std::cout << "c3*c4-> " << c3*c4 << std::endl;
+	    std::cout << c1.conjugate() << std::endl;
+	    std::cout << c3 << std::endl;
+	    std::cout << "c1*c2-> " << c1*c2 << std::endl;
+	    std::cout << "c3*c4-> " << c3*c4 << std::endl;
 		//OUTPUT:
 		/*
 		c1-> 3+3i
