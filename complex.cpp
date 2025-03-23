@@ -18,6 +18,11 @@ int main(){
 	    std::cout << c3 << std::endl;
 	    std::cout << "c1*c2-> " << c1*c2 << std::endl;
 	    std::cout << "c3*c4-> " << c3*c4 << std::endl;
+	    if(c2==c3){
+	    	std::cout << "c2=c3" << std::endl;
+		}else{
+			std::cout << "c2!=c3" << std::endl;
+		}
 		//OUTPUT:
 		/*
 		c1-> 3+3i

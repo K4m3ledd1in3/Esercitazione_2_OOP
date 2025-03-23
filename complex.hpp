@@ -18,6 +18,17 @@ class complex_number{
 		I imaginary(void) const{
 			return this->im;
 		}
+		bool operator==(const complex_number& other) const {
+   			 return this->re == other.re && this->im == other.im;
+		}
+
+		bool operator!=(const complex_number& other) const {
+    		return !(*this == other);
+		}
+
+		I norm() const {
+    		return std::sqrt(this->re * this->re + this->im * this->im);
+		}
 		complex_number& operator+=(const complex_number& other){
 			I a = this->re;
 			I b = this->im;
