@@ -2,7 +2,7 @@
 #include "complex.hpp"
 
 int main(){
-		using complex = complex<double>;
+	    using complex = complex<double>;
 	    complex c2(2.5,2.05);
 	    complex c1(3,3);
 	    complex c3(3,0);
