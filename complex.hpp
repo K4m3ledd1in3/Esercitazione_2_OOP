@@ -6,13 +6,13 @@ requires std::integral<I> || std::floating_point<I>
 /*
 std::floating_point<I> includes types such as float, double.
 */
-class complex{
+class complex_number{
 	I re, im;
 	public:
-		complex():
+		complex_number():
 			re(0), im(0)
 			{}
-		complex(I r, I i):
+		complex_number(I r, I i):
 			re(r), im(i)
 			{}
 		I real(void) const{
@@ -21,7 +21,7 @@ class complex{
 		I imaginary(void) const{
 			return this->im;
 		}
-		complex& operator+=(const complex& other){
+		complex_number& operator+=(const complex_number& other){
 			I a = this->re;
 			I b = this->im;
 			I c = other.re;
@@ -31,25 +31,25 @@ class complex{
 			this->im = b+d;
 			return *this;
 		}
-		complex operator+(const complex& other) const{
-			complex buff = *this;
+		complex_number operator+(const complex_number& other) const{
+			complex_number buff = *this;
 			buff+=other;
 			return buff;
 		}
-		complex& operator+=(const I& other){
+		complex_number& operator+=(const I& other){
 			I a = this->re;
 			I b = this->im;
 			this->re = a + other;
 			return *this;	
 		}
 		
-		complex operator+(const I& other) const{
-			complex buff = *this;
+		complex_number operator+(const I& other) const{
+			complex_number buff = *this;
 			buff+=other;
 			return buff;
 		}
 
-		complex& operator*=(const complex& other){
+		complex_number& operator*=(const complex_number& other){
 			I a = this->re;
 			I b = this->im; 
 			I c = other.re;
@@ -60,31 +60,31 @@ class complex{
 			this->im = a*d+c*b;
 			return *this;
 		}
-		complex operator*(const complex& other) const{
-			complex buff = *this;
+		complex_number operator*(const complex_number& other) const{
+			complex_number buff = *this;
 			buff*=other;
 			return buff;
 		} 
 		
-		complex& operator*=(const I& other){
+		complex_number& operator*=(const I& other){
 			I a = this->re;
 			I b = this->im;
 			this->re = a*other;
 			this->im = b*other;
 			return *this;
 		}
-		complex operator*(const I& other) const{
-			complex buff = *this;
+		complex_number operator*(const I& other) const{
+			complex_number buff = *this;
 			buff*=other;
 			return buff;
 		} 
-		complex conjugate(void) const{
-			return complex(this->re, -1*this->im);
+		complex_number conjugate(void) const{
+			return complex_number(this->re, -1*this->im);
 		}
 
 };
 template<typename I>
-std::ostream&operator<<(std::ostream& os, const complex<I>& c) {
+std::ostream&operator<<(std::ostream& os, const complex_number<I>& c) {
     if (c.imaginary() != 0){
      if(c.real()!=0){
 	 

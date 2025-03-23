@@ -2,11 +2,11 @@
 #include "complex.hpp"
 
 int main(){
-	    using complex = complex<double>;
-	    complex c2(2.5,2.05);
-	    complex c1(3,3);
-	    complex c3(3,0);
-	    complex c4(5,0);
+	    using complex_number = complex_number<double>;
+	    complex_number c2(2.5,2.05);
+	    complex_number c1(3,3);
+	    complex_number c3(3,0);
+	    complex_number c4(5,0);
 	    std::cout << "c1-> "<<c1 <<std::endl;
 	    std::cout << "c2-> "<<c2 <<std::endl;
 	    std::cout << "c3-> "<<c3 <<std::endl;
