@@ -3,9 +3,6 @@
 #include <cmath>
 template <typename I> 
 requires std::integral<I> || std::floating_point<I>
-/*
-std::floating_point<I> includes types such as float, double.
-*/
 class complex_number{
 	I re, im;
 	public:
@@ -26,7 +23,6 @@ class complex_number{
 			I b = this->im;
 			I c = other.re;
 			I d = other.im;
-			
 			this->re = a + c;
 			this->im = b+d;
 			return *this;
