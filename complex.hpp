@@ -10,7 +10,7 @@ class complex_number{
 	I re, im;
 	public:
 		complex_number():
-			re(0), im(0)
+			re(0), im(0) //default value
 			{}
 		complex_number(I r, I i):
 			re(r), im(i)
