@@ -4,7 +4,7 @@
 int main(){
 	    using complex_number = complex_number<float>;
 	    complex_number c1(3,3);	    
-		complex_number c2(2.5,2.05);
+	    complex_number c2(2.5,2.05);
 	    complex_number c3(3,0);
 	    complex_number c4(5,0);
 	    complex_number c5 = 3;
@@ -31,11 +31,11 @@ int main(){
 	    std::cout << "c1/c2 -> " << c1/c2 << std::endl;
 	    std::cout << "c1/s ->" << c1/s << std::endl; 
 	    std::cout << "c1+s -> " << c1+s << std::endl;
-		std::cout << "c2-s->" << c1-s << std::endl;
-		std::cout << "c3-c2-> " << c3-c2 << std::endl; 
-		std::cout << "c3+c5-> " << c3+c5 << std::endl;
-		c2 = c3;
-		std::cout << "c2->" << c2 << std::endl;
-		c2 = 6.0;
-		std::cout << "c2-> " << c2 << std::endl; 
+	    std::cout << "c2-s->" << c1-s << std::endl;
+	    std::cout << "c3-c2-> " << c3-c2 << std::endl; 
+	    std::cout << "c3+c5-> " << c3+c5 << std::endl;
+	    c2 = c3;
+	    std::cout << "c2->" << c2 << std::endl;
+	    c2 = 6.0;
+	    std::cout << "c2-> " << c2 << std::endl; 
 }
