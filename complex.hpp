@@ -9,19 +9,12 @@ class complex_number{
 		complex_number():
 			re(0), im(0) //default value
 			{}
-		complex_number(I r, I i):
-			re(r), im(i)
-			{}
-		I real(void) const{
-			return this->re;
-		}
-		I imaginary(void) const{
-			return this->im;
-		}
+		complex_number(I r, I i):re(r), im(i) {}
+		I real(void) const{	return this->re; }
+		I imaginary(void) const{	return this->im;  }
 		bool operator==(const complex_number& other) const {
    			 return this->re == other.re && this->im == other.im;
 		}
-
 		bool operator!=(const complex_number& other) const {
     		return !(*this == other);
 		}
@@ -42,9 +35,7 @@ class complex_number{
 			buff+=other;
 			return buff;
 		}
-		
-		//
-			complex_number& operator-=(const complex_number& other){
+		complex_number& operator-=(const complex_number& other){
 			this->re -= other.re;
 			this->im -= other.im;
 			return *this;
@@ -54,7 +45,6 @@ class complex_number{
 			buff-=other;
 			return buff;
 		}
-		//
 		complex_number& operator+=(const I& other){
 			this->re += other;
 			return *this;	
@@ -65,7 +55,6 @@ class complex_number{
 			buff+=other;
 			return buff;
 		}
-//
 		complex_number& operator-=(const I& other){
 			this->re -= other;
 			return *this;	
@@ -76,7 +65,6 @@ class complex_number{
 			buff-=other;
 			return buff;
 		}
-
 		complex_number& operator*=(const complex_number& other){
 			I a = this->re;
 			I b = this->im; 
@@ -106,8 +94,6 @@ class complex_number{
 			buff/=other;
 			return buff;
 		}		
-		
-		//
 		complex_number& operator*=(const I& other){
 			I a = this->re;
 			I b = this->im;
@@ -120,7 +106,6 @@ class complex_number{
 			buff*=other;
 			return buff;
 		} 
-//
 		complex_number& operator/=(const I& other){
 			I a = this->re;
 			I b = this->im;
@@ -133,17 +118,16 @@ class complex_number{
 			buff/=other;
 			return buff;
 		} 
-		
-	    complex_number(I c) : re(c), im(1)
-    	{
-        std::cout << "ok." << std::endl;
-    	}
+	      complex_number(I c) : re(c), im(1)
+    	      {
+               std::cout << "ok." << std::endl;
+    	       }
     	complex_number& operator=(const complex_number& c){
     		if (this != &c) 
 			{ 
         		this->re = c.re;
         		this->im = c.im;
-    		}
+    		        }
     		 return *this;
 		}
 		complex_number& operator=(const I& c){
