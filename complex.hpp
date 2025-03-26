@@ -6,9 +6,7 @@ requires std::integral<I> || std::floating_point<I>
 class complex_number{
 	I re, im;
 	public:
-		complex_number():
-			re(0), im(0) //default value
-			{}
+		complex_number(): re(0), im(0)  {}
 		complex_number(I r, I i):re(r), im(i) {}
 		I real(void) const{	return this->re; }
 		I imaginary(void) const{	return this->im;  }
