@@ -2,7 +2,7 @@
 #include "complex.hpp"
 
 int main(){
-	    using complex_number = complex_number<float>;
+	    using complex_number = complex_number<double>;
 	    complex_number c1(3,3);	    
 	    complex_number c2(2.5,2.05);
 	    complex_number c3(3,0);
