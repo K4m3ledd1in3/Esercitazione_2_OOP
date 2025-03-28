@@ -7,32 +7,43 @@ class complex_number{
 	I re, im;
 	public:
 		complex_number(): re(0), im(0)  {}
+		
 		complex_number(I r, I i):re(r), im(i) {}
+		
+	
 		I real(void) const{	return this->re; }
+		
 		I imaginary(void) const{	return this->im;  }
+		
 		bool operator==(const complex_number& other) const {
    			 return this->re == other.re && this->im == other.im;
 		}
+		
 		bool operator!=(const complex_number& other) const {
     		return !(*this == other);
 		}
+		
 		//squared norm
 		I norm() const {
     		return (this->re * this->re + this->im * this->im);
 		}
+		
 		complex_number conjugate(void) const{
 			return complex_number(this->re, -1*this->im);
 		}
+		
 		complex_number& operator+=(const complex_number& other){
 			this->re += other.re;
 			this->im += other.im;
 			return *this;
 		}
+		
 		complex_number operator+(const complex_number& other) const{
 			complex_number buff = *this;
 			buff+=other;
 			return buff;
 		}
+		
 		complex_number& operator-=(const complex_number& other){
 			this->re -= other.re;
 			this->im -= other.im;
@@ -43,6 +54,7 @@ class complex_number{
 			buff-=other;
 			return buff;
 		}
+		
 		complex_number& operator+=(const I& other){
 			this->re += other;
 			return *this;	
@@ -53,6 +65,7 @@ class complex_number{
 			buff+=other;
 			return buff;
 		}
+		
 		complex_number& operator-=(const I& other){
 			this->re -= other;
 			return *this;	
@@ -80,6 +93,7 @@ class complex_number{
 			return buff;
 		} 
 		//z1/z2 = (z1*z2)/(|z2|^2)
+		
 		complex_number& operator/=(const complex_number& other){
     		I norm = other.norm(); 
     		*this *= other.conjugate(); 
@@ -87,11 +101,14 @@ class complex_number{
     		this->im /= norm;
     		return *this;
 		}
+		
+		
 		complex_number operator/(const complex_number& other) const{
 			complex_number buff = *this;
 			buff/=other;
 			return buff;
-		}		
+		}	
+			
 		complex_number& operator*=(const I& other){
 			I a = this->re;
 			I b = this->im;
@@ -99,11 +116,13 @@ class complex_number{
 			this->im = b*other;
 			return *this;
 		}
+		
 		complex_number operator*(const I& other) const{
 			complex_number buff = *this;
 			buff*=other;
 			return buff;
 		} 
+		
 		complex_number& operator/=(const I& other){
 			I a = this->re;
 			I b = this->im;
@@ -111,15 +130,18 @@ class complex_number{
 			this->im = b/other;
 			return *this;
 		}
+		
 		complex_number operator/(const I& other) const{
 			complex_number buff = *this;
 			buff/=other;
 			return buff;
 		} 
+		
 	      complex_number(I c) : re(c), im(1)
     	      {
                std::cout << "ok." << std::endl;
     	       }
+    	       
     	complex_number& operator=(const complex_number& c){
     		if (this != &c) 
 			{ 
@@ -128,13 +150,25 @@ class complex_number{
     		        }
     		 return *this;
 		}
+		
 		complex_number& operator=(const I& c){
         		this->re = c;
         		this->im = 0;
     		 	return *this;
 		}
-    
+		complex_number inverse(const complex_number& c) {
+		   return c.conjugate()/c.norm();
+		}
 };
+template<typename I> complex_number<I>operator+ (const I& d, const complex_number<I>& c)
+{
+    return complex_number(d+c.real(),c.imaginary());
+}
+template<typename I> complex_number<I>operator*(const I& d, const complex_number<I>& c)
+{
+    return complex_number(d*c.real(),d*c.imaginary());
+}
+
 template<typename I> std::ostream&operator<<(std::ostream& os, const complex_number<I>& c) {
     if (c.imaginary() != 0){
      if(c.real()!=0)

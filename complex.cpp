@@ -37,5 +37,12 @@ int main(){
 	    c2 = c3;
 	    std::cout << "c2->" << c2 << std::endl;
 	    c2 = 6.0;
-	    std::cout << "c2-> " << c2 << std::endl; 
+	    std::cout << "c2-> " << c2 << std::endl;
+	    //commutatività
+		std::cout << "c2*s-> " << c2*s << std::endl;
+
+		std::cout << "c2*s-> " << s*c2 << std::endl;
+		//std::cout << "inverse of c2-> " << c2.inverse()<<std::cout;
+    	std::cout << "s+c2->" << s+c2 << std::endl;
+    	std::cout << "c2+s->" << c2+s << std::endl;
 }
