@@ -4,7 +4,7 @@
 int main(){
 	    using complex_number = complex_number<double>;
 	    complex_number c1(3,3);	    
-	    complex_number c2(2.5,2.05);
+	    complex_number c2(3,2);
 	    complex_number c3(3,0);
 	    complex_number c4(5,0);
 	    complex_number c5 = 3;
@@ -45,4 +45,6 @@ int main(){
 		//std::cout << "inverse of c2-> " << c2.inverse()<<std::cout;
     	std::cout << "s+c2->" << s+c2 << std::endl;
     	std::cout << "c2+s->" << c2+s << std::endl;
+    	std::cout << "c2^(-1)-> " << c2.inverse() << std::endl;
+    	std::cout << "c1^(-1)-> " << c1.inverse() << std::endl;   	
 }

@@ -16,7 +16,7 @@ class complex_number{
 		I imaginary(void) const{	return this->im;  }
 		
 		bool operator==(const complex_number& other) const {
-   			 return this->re == other.re && this->im == other.im;
+   			 return (*this - other).norm()<2.220446e-16;
 		}
 		
 		bool operator!=(const complex_number& other) const {
@@ -156,11 +156,11 @@ class complex_number{
         		this->im = 0;
     		 	return *this;
 		}
-		complex_number inverse(const complex_number& c) {
-		   return c.conjugate()/c.norm();
+		complex_number inverse(void) const{
+		   return (this->conjugate())/(this->norm());
 		}
 };
-template<typename I> complex_number<I>operator+ (const I& d, const complex_number<I>& c)
+template<typename I> complex_number<I>operator+(const I& d, const complex_number<I>& c)
 {
     return complex_number(d+c.real(),c.imaginary());
 }
@@ -170,15 +170,15 @@ template<typename I> complex_number<I>operator*(const I& d, const complex_number
 }
 
 template<typename I> std::ostream&operator<<(std::ostream& os, const complex_number<I>& c) {
-    if (c.imaginary() != 0){
-     if(c.real()!=0)
+    if (abs(c.imaginary())>2.220446e-16){
+     if(abs(c.real())>2.220446e-16)
 	 {
-    	if(c.imaginary()>0)
+    	if(c.imaginary()>2.220446e-16)
         	os << c.real() << "+" << c.imaginary() <<"i";
-		else
+		else if(c.imaginary()<-2.220446e-16)
         	os << c.real() << "-" << abs(c.imaginary()) << "i";
    	}
-   else
+   else 
    	{
    		os << c.imaginary() << "i";
    	}
