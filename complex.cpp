@@ -39,9 +39,9 @@ int main(){
 	    c2 = 6.0;
 	    std::cout << "c2-> " << c2 << std::endl;
 	    //check - commutatività
-		std::cout << "c2*s-> " << c2*s << std::endl;
-		std::cout << "c2*s-> " << s*c2 << std::endl;
-    	std::cout << "s+c2->" << s+c2 << std::endl;
-    	std::cout << "c2+s->" << c2+s << std::endl;
-    	std::cout << "c2^(-1)-> " << c2.inverse() << std::endl;
+	    std::cout << "c2*s-> " << c2*s << std::endl;
+	    std::cout << "c2*s-> " << s*c2 << std::endl;
+    	    std::cout << "s+c2->" << s+c2 << std::endl;
+    	    std::cout << "c2+s->" << c2+s << std::endl;
+    	    std::cout << "c2^(-1)-> " << c2.inverse() << std::endl;
 }
